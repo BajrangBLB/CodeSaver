@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %} Feed {% endblock title %}
+
+{% block head %}
+<style>
+    .slide {
+    text-align : center;
+    margin : 10px;
+    border : solid 2px black;
+    padding-left : 10px;
+    padding-right : 10px;
+    }
+
+    .question {
+    text-align : left;
+    margin : 0px;
+    padding-top : 10px;
+    }
+
+    .code {
+    margin : 0px;
+    text-align : left;
+    padding : 0px;
+    }
+
+
+</style>
+{% endblock head %}
+
+{% block body %}
+
+
+{% for i in code %}
+<div class="slide">
+    <p class="question">{{i.question}}</p>
+    <hr>
+    <pre class="code">
+<code>{{i.code}}</code>
+</pre>
+</div>
+{% endfor %}
+
+{% endblock body %}
